@@ -1,33 +1,65 @@
-import { kv } from "@vercel/kv";
+import { put, list, del } from "@vercel/blob";
 
-const SCHEDULE_KEY = "schedule_data";
-const PLAYERS_KEY = "players_data";
+const SCHEDULE_FILENAME = "schedule-data.json";
+const PLAYERS_FILENAME = "players-data.json";
+
+// ─── Helpers ────────────────────────────────────────
+
+async function readBlob(filename: string): Promise<any | null> {
+  try {
+    const { blobs } = await list({ prefix: filename });
+    if (blobs.length > 0) {
+      const response = await fetch(blobs[0].url);
+      if (!response.ok) return null;
+      return await response.json();
+    }
+  } catch (error) {
+    console.error(`Blob read error (${filename}):`, error);
+  }
+  return null;
+}
+
+async function writeBlob(filename: string, data: any): Promise<void> {
+  try {
+    const json = JSON.stringify(data, null, 2);
+    // Delete old versions to keep storage clean
+    const { blobs } = await list({ prefix: filename });
+    for (const blob of blobs) {
+      await del(blob.url);
+    }
+    await put(filename, json, {
+      access: "public",
+      contentType: "application/json",
+    });
+  } catch (error) {
+    console.error(`Blob write error (${filename}):`, error);
+    throw error;
+  }
+}
+
+function readLocalFile(filename: string): any {
+  const fs = require("fs");
+  const path = require("path");
+  const filePath = path.join(process.cwd(), "data", filename);
+  const content = fs.readFileSync(filePath, "utf8");
+  return JSON.parse(content);
+}
 
 // ─── Schedule / Matches ────────────────────────────
 
 export async function getAllMatches(): Promise<any[]> {
-  try {
-    const data = await kv.get<string>(SCHEDULE_KEY);
-    if (data) {
-      const parsed = JSON.parse(data);
-      return parsed.matches || [];
-    }
-  } catch (error) {
-    console.error("KV read error (matches):", error);
+  const data = await readBlob(SCHEDULE_FILENAME);
+  if (data && data.matches) {
+    return data.matches;
   }
   
-  // Fallback to local JSON file
-  const fs = await import("fs");
-  const path = await import("path");
-  const filePath = path.join(process.cwd(), "data", "schedule.json");
-  const content = fs.readFileSync(filePath, "utf8");
-  const parsed = JSON.parse(content);
-  return parsed.matches || [];
+  // Fallback to local file
+  const local = readLocalFile("schedule.json");
+  return local.matches || [];
 }
 
 export async function saveAllMatches(matches: any[]): Promise<void> {
-  const data = JSON.stringify({ matches });
-  await kv.set(SCHEDULE_KEY, data);
+  await writeBlob(SCHEDULE_FILENAME, { matches });
 }
 
 export async function addMatch(match: any): Promise<any> {
@@ -80,43 +112,26 @@ export async function deleteMatch(matchId: string): Promise<boolean> {
 // ─── Players ────────────────────────────────────────
 
 export async function getPlayers(team?: string): Promise<any> {
-  try {
-    const data = await kv.get<string>(PLAYERS_KEY);
-    if (data) {
-      const parsed = JSON.parse(data);
-      if (team) {
-        return parsed[team] || null;
-      }
-      return parsed;
-    }
-  } catch (error) {
-    console.error("KV read error (players):", error);
+  const data = await readBlob(PLAYERS_FILENAME);
+  if (data) {
+    if (team) return data[team] || null;
+    return data;
   }
   
-  // Fallback to local JSON file
-  const fs = await import("fs");
-  const path = await import("path");
-  const filePath = path.join(process.cwd(), "data", "players.json");
-  const content = fs.readFileSync(filePath, "utf8");
-  const parsed = JSON.parse(content);
-  if (team) {
-    return parsed[team] || null;
-  }
-  return parsed;
+  // Fallback to local file
+  const local = readLocalFile("players.json");
+  if (team) return local[team] || null;
+  return local;
 }
 
 export async function savePlayers(team: string, data: { formation: string; players: any[] }): Promise<void> {
   let allPlayers: any = {};
   
-  try {
-    const existing = await kv.get<string>(PLAYERS_KEY);
-    if (existing) {
-      allPlayers = JSON.parse(existing);
-    }
-  } catch {
-    // Start fresh
+  const existing = await readBlob(PLAYERS_FILENAME);
+  if (existing) {
+    allPlayers = existing;
   }
   
   allPlayers[team] = data;
-  await kv.set(PLAYERS_KEY, JSON.stringify(allPlayers));
+  await writeBlob(PLAYERS_FILENAME, allPlayers);
 }
