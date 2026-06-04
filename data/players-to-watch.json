@@ -1,0 +1,14 @@
+{
+    "players": [
+      { "name": "Kylian Mbappé", "team": "France", "position": "Forward", "keyStrength": "Pace and finishing" },
+      { "name": "Micheal Olise", "team": "France", "position": "Winger", "keyStrength": "Box-to-box dominance" },
+      { "name": "Vinícius Jr", "team": "Brazil", "position": "Winger", "keyStrength": "Dribbling and creativity" },
+      { "name": "Lamine Yamal", "team": "Spain", "position": "Winger", "keyStrength": "Youthful brilliance" },
+      { "name": "Erling Haaland", "team": "Norway", "position": "Striker", "keyStrength": "Goal scoring" },
+      { "name": "Jamal Musiala", "team": "Germany", "position": "Midfielder", "keyStrength": "Technical ability" },
+      { "name": "Lionel Messi", "team": "Argentina", "position": "Forward", "keyStrength": "Magic and vision" },
+      { "name": "Endrick", "team": "Brazil", "position": "Striker", "keyStrength": "Young prodigy" },
+      { "name": "Harry Kane", "team": "England", "position": "Stricker", "keyStrength": "Creativity" },
+      { "name": "Florian Wirtz", "team": "Germany", "position": "Midfielder", "keyStrength": "Playmaking" }
+    ]
+  }

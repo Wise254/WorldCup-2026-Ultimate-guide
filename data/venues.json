@@ -1,0 +1,53 @@
+{
+  "countries": [
+    {
+      "name": "Canada",
+      "venues": [
+        { "city": "Toronto", "stadium": "BMO Field", "capacity": 30000, "image": "Toronto stadium.jpg" },
+        { "city": "Vancouver", "stadium": "BC Place", "capacity": 54500, "image": "BC Place Stadium.jpg" }
+      ]
+    },
+    {
+      "name": "Mexico",
+      "venues": [
+        { "city": "Mexico City", "stadium": "Estadio Azteca", "capacity": 87500, "image": "Estadio Azteca.jpg" },
+        { "city": "Guadalajara", "stadium": "Estadio Akron", "capacity": 46800, "image": "Estadio Akron.jpg" },
+        { "city": "Monterrey", "stadium": "Estadio BBVA", "capacity": 53500, "image": "BBVA Stadium.jpg" }
+      ]
+    },
+    {
+      "name": "United States",
+      "venues": [
+        { "city": "New York/New Jersey", "stadium": "MetLife Stadium", "capacity": 82500, "image": "MetLife Stadium.jpg" },
+        { "city": "Dallas", "stadium": "AT&T Stadium", "capacity": 80000, "image": "AT&T Stadium.jpg" },
+        { "city": "Los Angeles", "stadium": "SoFi Stadium", "capacity": 70240, "image": "So-fi stadium.jpg" },
+        { "city": "Atlanta", "stadium": "Mercedes-Benz Stadium", "capacity": 71000, "image": "Mercedes Benz Stadium.jpg" },
+        { "city": "Miami", "stadium": "Hard Rock Stadium", "capacity": 65326, "image": "Miami Stadium.jpg" },
+        { "city": "Seattle", "stadium": "Lumen Field", "capacity": 69000, "image": "Seattle Stadium.jpg" },
+        { "city": "Kansas City", "stadium": "Arrowhead Stadium", "capacity": 76416, "image": "Kansas Stadium.jpg" },
+        { "city": "Houston", "stadium": "NRG Stadium", "capacity": 72220, "image": "Houston Stadium.jpg" },
+        { "city": "San Francisco Bay Area", "stadium": "Levi's Stadium", "capacity": 68500, "image": "Levi's Stadium.jpg" },
+        { "city": "Boston", "stadium": "Gillette Stadium", "capacity": 65878, "image": "Boston Stadium.jpg" },
+        { "city": "Philadelphia", "stadium": "Lincoln Financial Field", "capacity": 69176, "image": "Philadelphia Stadium.jpg" }
+      ]
+    }
+  ],
+  "allVenues": [
+    { "city": "Toronto", "stadium": "BMO Field", "country": "Canada", "capacity": 30000, "image": "Toronto stadium.jpg" },
+    { "city": "Vancouver", "stadium": "BC Place", "country": "Canada", "capacity": 54500, "image": "BC Place Stadium.jpg" },
+    { "city": "Mexico City", "stadium": "Estadio Azteca", "country": "Mexico", "capacity": 87500, "image": "Estadio Azteca.jpg" },
+    { "city": "Guadalajara", "stadium": "Estadio Akron", "country": "Mexico", "capacity": 46800, "image": "Estadio Akron.jpg" },
+    { "city": "Monterrey", "stadium": "Estadio BBVA", "country": "Mexico", "capacity": 53500, "image": "BBVA Stadium.jpg" },
+    { "city": "New York/New Jersey", "stadium": "MetLife Stadium", "country": "USA", "capacity": 82500, "image": "MetLife Stadium.jpg" },
+    { "city": "Dallas", "stadium": "AT&T Stadium", "country": "USA", "capacity": 80000, "image": "AT&T Stadium.jpg" },
+    { "city": "Los Angeles", "stadium": "SoFi Stadium", "country": "USA", "capacity": 70240, "image": "So-fi stadium.jpg" },
+    { "city": "Atlanta", "stadium": "Mercedes-Benz Stadium", "country": "USA", "capacity": 71000, "image": "Mercedes Benz Stadium.jpg" },
+    { "city": "Miami", "stadium": "Hard Rock Stadium", "country": "USA", "capacity": 65326, "image": "Miami Stadium.jpg" },
+    { "city": "Seattle", "stadium": "Lumen Field", "country": "USA", "capacity": 69000, "image": "Seattle Stadium.jpg" },
+    { "city": "Kansas City", "stadium": "Arrowhead Stadium", "country": "USA", "capacity": 76416, "image": "Kansas Stadium.jpg" },
+    { "city": "Houston", "stadium": "NRG Stadium", "country": "USA", "capacity": 72220, "image": "Houston Stadium.jpg" },
+    { "city": "San Francisco Bay Area", "stadium": "Levi's Stadium", "country": "USA", "capacity": 68500, "image": "Levi's Stadium.jpg" },
+    { "city": "Boston", "stadium": "Gillette Stadium", "country": "USA", "capacity": 65878, "image": "Boston Stadium.jpg" },
+    { "city": "Philadelphia", "stadium": "Lincoln Financial Field", "country": "USA", "capacity": 69176, "image": "Philadelphia Stadium.jpg" }
+  ]
+}

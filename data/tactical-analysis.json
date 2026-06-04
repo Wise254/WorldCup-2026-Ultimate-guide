@@ -1,0 +1,34 @@
+{
+    "analyses": [
+      {
+        "team": "Argentina",
+        "style": "Balanced attack built around possession and Messi's creativity with aggressive midfield pressing.",
+        "strengths": ["Possession control", "Messi's creativity", "Midfield pressing", "Attacking transitions"]
+      },
+      {
+        "team": "France",
+        "style": "High athleticism, counter-attacking speed and deep squad rotation.",
+        "strengths": ["Athleticism", "Counter-attacking", "Squad depth", "Set pieces"]
+      },
+      {
+        "team": "England",
+        "style": "Strong midfield control through Bellingham and Rice combined with wide attacking play.",
+        "strengths": ["Midfield dominance", "Wide attacks", "Set pieces", "Kane's finishing"]
+      },
+      {
+        "team": "Brazil",
+        "style": "Fast transitions and explosive wing play focused on Vinícius Jr and Rodrygo.",
+        "strengths": ["Pace on wings", "Technical ability", "Individual brilliance", "Transition speed"]
+      },
+      {
+        "team": "Spain",
+        "style": "Possession-heavy football with technical midfield superiority.",
+        "strengths": ["Possession retention", "Midfield control", "Young talents", "Tactical discipline"]
+      },
+      {
+        "team": "Portugal",
+        "style": "Creative midfield structure with flexible attacking movement.",
+        "strengths": ["Midfield creativity", "Attacking flexibility", "Experience", "Set pieces"]
+      }
+    ]
+  }

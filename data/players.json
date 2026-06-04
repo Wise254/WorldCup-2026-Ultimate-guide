@@ -1,0 +1,1102 @@
+{
+  "teams": [
+    {
+      "name": "Argentina",
+      "formation": "4-3-3",
+      "players": [
+        {
+          "position": "GK",
+          "name": "Martínez",
+          "number": 23
+        },
+        {
+          "position": "RB",
+          "name": "Molina",
+          "number": 2
+        },
+        {
+          "position": "CB",
+          "name": "Romero",
+          "number": 13
+        },
+        {
+          "position": "CB",
+          "name": "Lisandro Martínez",
+          "number": 25
+        },
+        {
+          "position": "LB",
+          "name": "Tagliafico",
+          "number": 3
+        },
+        {
+          "position": "CM",
+          "name": "De Paul",
+          "number": 7
+        },
+        {
+          "position": "CM",
+          "name": "Enzo Fernández",
+          "number": 24
+        },
+        {
+          "position": "CM",
+          "name": "Mac Allister",
+          "number": 20
+        },
+        {
+          "position": "RW",
+          "name": "Messi",
+          "number": 10
+        },
+        {
+          "position": "ST",
+          "name": "Julián Álvarez",
+          "number": 9
+        },
+        {
+          "position": "LW",
+          "name": "Lautaro Martínez",
+          "number": 22
+        }
+      ]
+    },
+    {
+      "name": "Brazil",
+      "formation": "4-3-3",
+      "players": [
+        {
+          "position": "GK",
+          "name": "Alisson",
+          "number": 1
+        },
+        {
+          "position": "RB",
+          "name": "Danilo",
+          "number": 2
+        },
+        {
+          "position": "CB",
+          "name": "Militão",
+          "number": 4
+        },
+        {
+          "position": "CB",
+          "name": "Marquinhos",
+          "number": 3
+        },
+        {
+          "position": "LB",
+          "name": "Arana",
+          "number": 6
+        },
+        {
+          "position": "CM",
+          "name": "Bruno Guimarães",
+          "number": 8
+        },
+        {
+          "position": "CM",
+          "name": "João Gomes",
+          "number": 15
+        },
+        {
+          "position": "RW",
+          "name": "Rodrygo",
+          "number": 21
+        },
+        {
+          "position": "LW",
+          "name": "Vinícius Jr",
+          "number": 7
+        },
+        {
+          "position": "ST",
+          "name": "Raphinha",
+          "number": 11
+        },
+        {
+          "position": "ST",
+          "name": "Endrick",
+          "number": 9
+        }
+      ]
+    },
+    {
+      "name": "England",
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "position": "GK",
+          "name": "Pickford",
+          "number": 1
+        },
+        {
+          "position": "RB",
+          "name": "Walker",
+          "number": 2
+        },
+        {
+          "position": "CB",
+          "name": "Stones",
+          "number": 5
+        },
+        {
+          "position": "CB",
+          "name": "Guéhi",
+          "number": 6
+        },
+        {
+          "position": "LB",
+          "name": "Shaw",
+          "number": 3
+        },
+        {
+          "position": "CDM",
+          "name": "Rice",
+          "number": 4
+        },
+        {
+          "position": "CDM",
+          "name": "Bellingham",
+          "number": 10
+        },
+        {
+          "position": "RW",
+          "name": "Foden",
+          "number": 7
+        },
+        {
+          "position": "CAM",
+          "name": "Saka",
+          "number": 11
+        },
+        {
+          "position": "LW",
+          "name": "Palmer",
+          "number": 20
+        },
+        {
+          "position": "ST",
+          "name": "Kane",
+          "number": 9
+        }
+      ]
+    },
+    {
+      "name": "France",
+      "formation": "4-3-3",
+      "players": [
+        {
+          "position": "GK",
+          "name": "Maignan",
+          "number": 1
+        },
+        {
+          "position": "RB",
+          "name": "Koundé",
+          "number": 2
+        },
+        {
+          "position": "CB",
+          "name": "Saliba",
+          "number": 17
+        },
+        {
+          "position": "CB",
+          "name": "Konaté",
+          "number": 24
+        },
+        {
+          "position": "LB",
+          "name": "Theo Hernández",
+          "number": 22
+        },
+        {
+          "position": "CM",
+          "name": "Tchouaméni",
+          "number": 8
+        },
+        {
+          "position": "CM",
+          "name": "Camavinga",
+          "number": 6
+        },
+        {
+          "position": "CM",
+          "name": "Griezmann",
+          "number": 7
+        },
+        {
+          "position": "RW",
+          "name": "Dembélé",
+          "number": 11
+        },
+        {
+          "position": "ST",
+          "name": "Mbappé",
+          "number": 10
+        },
+        {
+          "position": "LW",
+          "name": "Kolo Muani",
+          "number": 12
+        }
+      ]
+    },
+    {
+      "name": "Germany",
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "position": "GK",
+          "name": "ter Stegen",
+          "number": 1
+        },
+        {
+          "position": "RB",
+          "name": "Kimmich",
+          "number": 6
+        },
+        {
+          "position": "CB",
+          "name": "Rüdiger",
+          "number": 2
+        },
+        {
+          "position": "CB",
+          "name": "Schlotterbeck",
+          "number": 15
+        },
+        {
+          "position": "LB",
+          "name": "Raum",
+          "number": 3
+        },
+        {
+          "position": "CDM",
+          "name": "Andrich",
+          "number": 23
+        },
+        {
+          "position": "CDM",
+          "name": "Musiala",
+          "number": 10
+        },
+        {
+          "position": "RW",
+          "name": "Sané",
+          "number": 19
+        },
+        {
+          "position": "CAM",
+          "name": "Wirtz",
+          "number": 17
+        },
+        {
+          "position": "LW",
+          "name": "Gnabry",
+          "number": 7
+        },
+        {
+          "position": "ST",
+          "name": "Havertz",
+          "number": 9
+        }
+      ]
+    },
+    {
+      "name": "Spain",
+      "formation": "4-3-3",
+      "players": [
+        {
+          "position": "GK",
+          "name": "Unai Simón",
+          "number": 23
+        },
+        {
+          "position": "RB",
+          "name": "Carvajal",
+          "number": 2
+        },
+        {
+          "position": "CB",
+          "name": "Le Normand",
+          "number": 4
+        },
+        {
+          "position": "CB",
+          "name": "Cubarsí",
+          "number": 15
+        },
+        {
+          "position": "LB",
+          "name": "Grimaldo",
+          "number": 3
+        },
+        {
+          "position": "CDM",
+          "name": "Rodri",
+          "number": 16
+        },
+        {
+          "position": "CM",
+          "name": "Pedri",
+          "number": 8
+        },
+        {
+          "position": "CM",
+          "name": "Gavi",
+          "number": 6
+        },
+        {
+          "position": "RW",
+          "name": "Lamine Yamal",
+          "number": 19
+        },
+        {
+          "position": "LW",
+          "name": "Nico Williams",
+          "number": 11
+        },
+        {
+          "position": "ST",
+          "name": "Morata",
+          "number": 7
+        }
+      ]
+    },
+    {
+      "name": "Portugal",
+      "formation": "4-3-3",
+      "players": [
+        {
+          "position": "GK",
+          "name": "Diogo Costa",
+          "number": 1
+        },
+        {
+          "position": "RB",
+          "name": "Cancelo",
+          "number": 2
+        },
+        {
+          "position": "CB",
+          "name": "Rúben Dias",
+          "number": 3
+        },
+        {
+          "position": "CB",
+          "name": "António Silva",
+          "number": 14
+        },
+        {
+          "position": "LB",
+          "name": "Nuno Mendes",
+          "number": 19
+        },
+        {
+          "position": "CM",
+          "name": "Vitinha",
+          "number": 8
+        },
+        {
+          "position": "CM",
+          "name": "João Neves",
+          "number": 6
+        },
+        {
+          "position": "CM",
+          "name": "Bruno Fernandes",
+          "number": 10
+        },
+        {
+          "position": "RW",
+          "name": "Bernardo Silva",
+          "number": 7
+        },
+        {
+          "position": "LW",
+          "name": "Rafael Leão",
+          "number": 17
+        },
+        {
+          "position": "ST",
+          "name": "Cristiano Ronaldo",
+          "number": 7
+        }
+      ]
+    },
+    {
+      "name": "Netherlands",
+      "formation": "4-3-3",
+      "players": [
+        {
+          "position": "GK",
+          "name": "Verbruggen",
+          "number": 1
+        },
+        {
+          "position": "RB",
+          "name": "Dumfries",
+          "number": 22
+        },
+        {
+          "position": "CB",
+          "name": "van Dijk",
+          "number": 4
+        },
+        {
+          "position": "CB",
+          "name": "Aké",
+          "number": 5
+        },
+        {
+          "position": "LB",
+          "name": "Hartman",
+          "number": 3
+        },
+        {
+          "position": "CM",
+          "name": "De Jong",
+          "number": 21
+        },
+        {
+          "position": "CM",
+          "name": "Reijnders",
+          "number": 14
+        },
+        {
+          "position": "CM",
+          "name": "Koopmeiners",
+          "number": 20
+        },
+        {
+          "position": "RW",
+          "name": "Frimpong",
+          "number": 12
+        },
+        {
+          "position": "ST",
+          "name": "Depay",
+          "number": 10
+        },
+        {
+          "position": "LW",
+          "name": "Gakpo",
+          "number": 8
+        }
+      ]
+    },
+    {
+      "name": "Belgium",
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "position": "GK",
+          "name": "Courtois",
+          "number": 1
+        },
+        {
+          "position": "RB",
+          "name": "Castagne",
+          "number": 21
+        },
+        {
+          "position": "CB",
+          "name": "Faes",
+          "number": 4
+        },
+        {
+          "position": "CB",
+          "name": "Debast",
+          "number": 2
+        },
+        {
+          "position": "LB",
+          "name": "Theate",
+          "number": 3
+        },
+        {
+          "position": "CDM",
+          "name": "Onana",
+          "number": 6
+        },
+        {
+          "position": "CDM",
+          "name": "De Bruyne",
+          "number": 7
+        },
+        {
+          "position": "RW",
+          "name": "Bakayoko",
+          "number": 11
+        },
+        {
+          "position": "CAM",
+          "name": "Trossard",
+          "number": 17
+        },
+        {
+          "position": "LW",
+          "name": "Doku",
+          "number": 10
+        },
+        {
+          "position": "ST",
+          "name": "Lukaku",
+          "number": 9
+        }
+      ]
+    },
+    {
+      "name": "Croatia",
+      "formation": "4-3-3",
+      "players": [
+        {
+          "position": "GK",
+          "name": "Livaković",
+          "number": 1
+        },
+        {
+          "position": "RB",
+          "name": "Stanišić",
+          "number": 2
+        },
+        {
+          "position": "CB",
+          "name": "Gvardiol",
+          "number": 20
+        },
+        {
+          "position": "CB",
+          "name": "Šutalo",
+          "number": 6
+        },
+        {
+          "position": "LB",
+          "name": "Sosa",
+          "number": 3
+        },
+        {
+          "position": "CM",
+          "name": "Modrić",
+          "number": 10
+        },
+        {
+          "position": "CM",
+          "name": "Kovačić",
+          "number": 8
+        },
+        {
+          "position": "CM",
+          "name": "Brozović",
+          "number": 11
+        },
+        {
+          "position": "RW",
+          "name": "Pašalić",
+          "number": 15
+        },
+        {
+          "position": "ST",
+          "name": "Kramarić",
+          "number": 9
+        },
+        {
+          "position": "LW",
+          "name": "Perišić",
+          "number": 4
+        }
+      ]
+    },
+    {
+      "name": "Uruguay",
+      "formation": "4-3-3",
+      "players": [
+        {
+          "position": "GK",
+          "name": "Rochet",
+          "number": 1
+        },
+        {
+          "position": "RB",
+          "name": "Nández",
+          "number": 8
+        },
+        {
+          "position": "CB",
+          "name": "Araújo",
+          "number": 4
+        },
+        {
+          "position": "CB",
+          "name": "Giménez",
+          "number": 2
+        },
+        {
+          "position": "LB",
+          "name": "Olivera",
+          "number": 16
+        },
+        {
+          "position": "CM",
+          "name": "Valverde",
+          "number": 15
+        },
+        {
+          "position": "CM",
+          "name": "Ugarte",
+          "number": 5
+        },
+        {
+          "position": "CM",
+          "name": "Bentancur",
+          "number": 6
+        },
+        {
+          "position": "RW",
+          "name": "Pellistri",
+          "number": 11
+        },
+        {
+          "position": "ST",
+          "name": "Darwin Núñez",
+          "number": 9
+        },
+        {
+          "position": "LW",
+          "name": "Maxi Araújo",
+          "number": 13
+        }
+      ]
+    },
+    {
+      "name": "Colombia",
+      "formation": "4-3-3",
+      "players": [
+        {
+          "position": "GK",
+          "name": "Vargas",
+          "number": 12
+        },
+        {
+          "position": "RB",
+          "name": "Muñoz",
+          "number": 21
+        },
+        {
+          "position": "CB",
+          "name": "Sánchez",
+          "number": 3
+        },
+        {
+          "position": "CB",
+          "name": "Lucumí",
+          "number": 2
+        },
+        {
+          "position": "LB",
+          "name": "Mojica",
+          "number": 17
+        },
+        {
+          "position": "CM",
+          "name": "Lerma",
+          "number": 8
+        },
+        {
+          "position": "CM",
+          "name": "Ríos",
+          "number": 6
+        },
+        {
+          "position": "CM",
+          "name": "James Rodríguez",
+          "number": 10
+        },
+        {
+          "position": "RW",
+          "name": "Arias",
+          "number": 7
+        },
+        {
+          "position": "ST",
+          "name": "Córdoba",
+          "number": 9
+        },
+        {
+          "position": "LW",
+          "name": "Luis Díaz",
+          "number": 14
+        }
+      ]
+    },
+    {
+      "name": "Morocco",
+      "formation": "4-3-3",
+      "players": [
+        {
+          "position": "GK",
+          "name": "Bono",
+          "number": 1
+        },
+        {
+          "position": "RB",
+          "name": "Hakimi",
+          "number": 2
+        },
+        {
+          "position": "CB",
+          "name": "Aguerd",
+          "number": 5
+        },
+        {
+          "position": "CB",
+          "name": "Saïss",
+          "number": 6
+        },
+        {
+          "position": "LB",
+          "name": "Mazraoui",
+          "number": 3
+        },
+        {
+          "position": "CM",
+          "name": "Amrabat",
+          "number": 4
+        },
+        {
+          "position": "CM",
+          "name": "Ounahi",
+          "number": 8
+        },
+        {
+          "position": "CM",
+          "name": "Amallah",
+          "number": 15
+        },
+        {
+          "position": "RW",
+          "name": "Ziyech",
+          "number": 7
+        },
+        {
+          "position": "ST",
+          "name": "En-Nesyri",
+          "number": 19
+        },
+        {
+          "position": "LW",
+          "name": "Boufal",
+          "number": 17
+        }
+      ]
+    },
+    {
+      "name": "Senegal",
+      "formation": "4-3-3",
+      "players": [
+        {
+          "position": "GK",
+          "name": "Mendy",
+          "number": 1
+        },
+        {
+          "position": "RB",
+          "name": "Jakobs",
+          "number": 14
+        },
+        {
+          "position": "CB",
+          "name": "Koulibaly",
+          "number": 3
+        },
+        {
+          "position": "CB",
+          "name": "Niakhaté",
+          "number": 4
+        },
+        {
+          "position": "LB",
+          "name": "Ballo-Touré",
+          "number": 2
+        },
+        {
+          "position": "CM",
+          "name": "Gueye",
+          "number": 5
+        },
+        {
+          "position": "CM",
+          "name": "Camara",
+          "number": 6
+        },
+        {
+          "position": "CM",
+          "name": "Pape Sarr",
+          "number": 17
+        },
+        {
+          "position": "RW",
+          "name": "Ismaïla Sarr",
+          "number": 10
+        },
+        {
+          "position": "ST",
+          "name": "Jackson",
+          "number": 9
+        },
+        {
+          "position": "LW",
+          "name": "Mané",
+          "number": 7
+        }
+      ]
+    },
+    {
+      "name": "Japan",
+      "formation": "4-2-3-1",
+      "players": [
+        {
+          "position": "GK",
+          "name": "Suzuki",
+          "number": 23
+        },
+        {
+          "position": "RB",
+          "name": "Tomiyasu",
+          "number": 2
+        },
+        {
+          "position": "CB",
+          "name": "Itakura",
+          "number": 4
+        },
+        {
+          "position": "CB",
+          "name": "Yoshida",
+          "number": 22
+        },
+        {
+          "position": "LB",
+          "name": "Ito",
+          "number": 3
+        },
+        {
+          "position": "CDM",
+          "name": "Endo",
+          "number": 6
+        },
+        {
+          "position": "CDM",
+          "name": "Morita",
+          "number": 5
+        },
+        {
+          "position": "RW",
+          "name": "Doan",
+          "number": 10
+        },
+        {
+          "position": "CAM",
+          "name": "Kubo",
+          "number": 11
+        },
+        {
+          "position": "LW",
+          "name": "Mitoma",
+          "number": 7
+        },
+        {
+          "position": "ST",
+          "name": "Ueda",
+          "number": 9
+        }
+      ]
+    },
+    {
+      "name": "USA",
+      "formation": "4-3-3",
+      "players": [
+        {
+          "position": "GK",
+          "name": "Turner",
+          "number": 1
+        },
+        {
+          "position": "RB",
+          "name": "Dest",
+          "number": 2
+        },
+        {
+          "position": "CB",
+          "name": "Richards",
+          "number": 4
+        },
+        {
+          "position": "CB",
+          "name": "Ream",
+          "number": 13
+        },
+        {
+          "position": "LB",
+          "name": "Robinson",
+          "number": 5
+        },
+        {
+          "position": "CM",
+          "name": "McKennie",
+          "number": 8
+        },
+        {
+          "position": "CM",
+          "name": "Adams",
+          "number": 6
+        },
+        {
+          "position": "CM",
+          "name": "Reyna",
+          "number": 7
+        },
+        {
+          "position": "RW",
+          "name": "Weah",
+          "number": 21
+        },
+        {
+          "position": "ST",
+          "name": "Balogun",
+          "number": 9
+        },
+        {
+          "position": "LW",
+          "name": "Pulisic",
+          "number": 10
+        }
+      ]
+    },
+    {
+      "name": "Mexico",
+      "formation": "4-3-3",
+      "players": [
+        {
+          "position": "GK",
+          "name": "Ochoa",
+          "number": 13
+        },
+        {
+          "position": "RB",
+          "name": "Araujo",
+          "number": 2
+        },
+        {
+          "position": "CB",
+          "name": "Montes",
+          "number": 3
+        },
+        {
+          "position": "CB",
+          "name": "Vásquez",
+          "number": 5
+        },
+        {
+          "position": "LB",
+          "name": "Gallardo",
+          "number": 23
+        },
+        {
+          "position": "CM",
+          "name": "Álvarez",
+          "number": 4
+        },
+        {
+          "position": "CM",
+          "name": "Chávez",
+          "number": 18
+        },
+        {
+          "position": "CM",
+          "name": "Pineda",
+          "number": 17
+        },
+        {
+          "position": "RW",
+          "name": "Antuna",
+          "number": 21
+        },
+        {
+          "position": "ST",
+          "name": "Giménez",
+          "number": 11
+        },
+        {
+          "position": "LW",
+          "name": "Lozano",
+          "number": 22
+        }
+      ]
+    },
+    {
+      "name": "Canada",
+      "formation": "4-4-2",
+      "players": [
+        {
+          "position": "GK",
+          "name": "Borjan",
+          "number": 1
+        },
+        {
+          "position": "RB",
+          "name": "Johnston",
+          "number": 2
+        },
+        {
+          "position": "CB",
+          "name": "Cornelius",
+          "number": 5
+        },
+        {
+          "position": "CB",
+          "name": "Miller",
+          "number": 4
+        },
+        {
+          "position": "LB",
+          "name": "Davies",
+          "number": 19
+        },
+        {
+          "position": "RM",
+          "name": "Buchanan",
+          "number": 11
+        },
+        {
+          "position": "CM",
+          "name": "Koné",
+          "number": 8
+        },
+        {
+          "position": "CM",
+          "name": "Eustáquio",
+          "number": 7
+        },
+        {
+          "position": "LM",
+          "name": "Millar",
+          "number": 23
+        },
+        {
+          "position": "ST",
+          "name": "David",
+          "number": 20
+        },
+        {
+          "position": "ST",
+          "name": "Larin",
+          "number": 9
+        }
+      ]
+    }
+  ]
+}

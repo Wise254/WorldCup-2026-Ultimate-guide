@@ -1,0 +1,106 @@
+{
+    "teams": [
+      {
+        "name": "Argentina",
+        "formation": "4-3-3",
+        "lineup": [
+          { "position": "GK", "player": "Martínez" },
+          { "position": "RB", "player": "Molina" },
+          { "position": "CB", "player": "Romero" },
+          { "position": "CB", "player": "Lisandro Martínez" },
+          { "position": "LB", "player": "Tagliafico" },
+          { "position": "CM", "player": "De Paul" },
+          { "position": "CM", "player": "Enzo Fernández" },
+          { "position": "CM", "player": "Mac Allister" },
+          { "position": "RW", "player": "Messi" },
+          { "position": "ST", "player": "Julián Álvarez" },
+          { "position": "LW", "player": "Lautaro Martínez" }
+        ]
+      },
+      {
+        "name": "France",
+        "formation": "4-3-3",
+        "lineup": [
+          { "position": "GK", "player": "Maignan" },
+          { "position": "RB", "player": "Koundé" },
+          { "position": "CB", "player": "Saliba" },
+          { "position": "CB", "player": "Konaté" },
+          { "position": "LB", "player": "Theo Hernández" },
+          { "position": "CM", "player": "Tchouaméni" },
+          { "position": "CM", "player": "Camavinga" },
+          { "position": "CM", "player": "Griezmann" },
+          { "position": "RW", "player": "Dembélé" },
+          { "position": "ST", "player": "Mbappé" },
+          { "position": "LW", "player": "Kolo Muani" }
+        ]
+      },
+      {
+        "name": "England",
+        "formation": "4-2-3-1",
+        "lineup": [
+          { "position": "GK", "player": "Pickford" },
+          { "position": "RB", "player": "Walker" },
+          { "position": "CB", "player": "Stones" },
+          { "position": "CB", "player": "Guéhi" },
+          { "position": "LB", "player": "Shaw" },
+          { "position": "CDM", "player": "Rice" },
+          { "position": "CDM", "player": "Bellingham" },
+          { "position": "RW", "player": "Foden" },
+          { "position": "CAM", "player": "Saka" },
+          { "position": "LW", "player": "Palmer" },
+          { "position": "ST", "player": "Kane" }
+        ]
+      },
+      {
+        "name": "Brazil",
+        "formation": "4-3-3",
+        "lineup": [
+          { "position": "GK", "player": "Alisson" },
+          { "position": "RB", "player": "Danilo" },
+          { "position": "CB", "player": "Militão" },
+          { "position": "CB", "player": "Marquinhos" },
+          { "position": "LB", "player": "Arana" },
+          { "position": "CM", "player": "Bruno Guimarães" },
+          { "position": "CM", "player": "João Gomes" },
+          { "position": "RW", "player": "Rodrygo" },
+          { "position": "LW", "player": "Vinícius Jr" },
+          { "position": "ST", "player": "Raphinha" },
+          { "position": "ST", "player": "Endrick" }
+        ]
+      },
+      {
+        "name": "Portugal",
+        "formation": "4-3-3",
+        "lineup": [
+          { "position": "GK", "player": "Diogo Costa" },
+          { "position": "RB", "player": "Cancelo" },
+          { "position": "CB", "player": "Rúben Dias" },
+          { "position": "CB", "player": "António Silva" },
+          { "position": "LB", "player": "Nuno Mendes" },
+          { "position": "CM", "player": "Vitinha" },
+          { "position": "CM", "player": "João Neves" },
+          { "position": "CM", "player": "Bruno Fernandes" },
+          { "position": "RW", "player": "Bernardo Silva" },
+          { "position": "LW", "player": "Rafael Leão" },
+          { "position": "ST", "player": "Cristiano Ronaldo" }
+        ]
+      },
+      {
+        "name": "Spain",
+        "formation": "4-3-3",
+        "lineup": [
+          { "position": "GK", "player": "Unai Simón" },
+          { "position": "RB", "player": "Carvajal" },
+          { "position": "CB", "player": "Le Normand" },
+          { "position": "CB", "player": "Cubarsí" },
+          { "position": "LB", "player": "Grimaldo" },
+          { "position": "CDM", "player": "Rodri" },
+          { "position": "CM", "player": "Pedri" },
+          { "position": "CM", "player": "Gavi" },
+          { "position": "RW", "player": "Lamine Yamal" },
+          { "position": "LW", "player": "Nico Williams" },
+          { "position": "ST", "player": "Morata" }
+        ]
+      }
+    ]
+  }

@@ -1,0 +1,66 @@
+{
+  "favorites": [
+    { "rank": 1, "team": "Argentina", "reason": "Reigning champions with a balanced squad and Messi's enduring magic", "confidence": 92, "keyPlayer": "Lionel Messi", "xFactor": "Can the aging core maintain 7-match intensity?" },
+    { "rank": 2, "team": "France", "reason": "Incredible depth and Mbappé's generational brilliance", "confidence": 88, "keyPlayer": "Kylian Mbappé", "xFactor": "Can they dominate without a traditional target-man striker?" },
+    { "rank": 3, "team": "Brazil", "reason": "Explosive wing play and a new generation of stars", "confidence": 85, "keyPlayer": "Vinícius Jr", "xFactor": "Can they handle physical European defenses?" },
+    { "rank": 4, "team": "England", "reason": "Midfield strength, Kane's goals, and Southgate's system", "confidence": 80, "keyPlayer": "Jude Bellingham", "xFactor": "Defensive vulnerability against quick counters" },
+    { "rank": 5, "team": "Spain", "reason": "Possession mastery and an exciting youth movement", "confidence": 75, "keyPlayer": "Lamine Yamal", "xFactor": "Converting possession into goals" },
+    { "rank": 6, "team": "Portugal", "reason": "Creative midfield and a blend of experience with youth", "confidence": 70, "keyPlayer": "Bruno Fernandes", "xFactor": "Ronaldo's role and impact at 41" }
+  ],
+  "darkHorses": [
+    { "team": "Morocco", "reason": "Semifinalists in 2022, strong defensive organization and counter-attacks", "upsetPotential": 8, "signatureWeapon": "Defensive block + rapid transitions", "dreamScenario": "Repeat 2022 magic with more clinical finishing" },
+    { "team": "Japan", "reason": "Disciplined tactically, proven upset specialists", "upsetPotential": 7, "signatureWeapon": "High press + quick passing combinations", "dreamScenario": "Navigate group of death and shock a giant in Round of 32" },
+    { "team": "Colombia", "reason": "Physical style, counter-attacking threat, and Díaz's brilliance", "upsetPotential": 7, "signatureWeapon": "Wing speed + aerial threat", "dreamScenario": "Ride momentum through a favorable knockout path" },
+    { "team": "Croatia", "reason": "Tournament experience and elite midfield quality", "upsetPotential": 6, "signatureWeapon": "Midfield control + extra-time mentality", "dreamScenario": "Modrić's last dance goes deep into knockouts" },
+    { "team": "Senegal", "reason": "African champions with world-class individuals in every line", "upsetPotential": 8, "signatureWeapon": "Physical dominance + individual brilliance", "dreamScenario": "First African semifinalists in World Cup history" }
+  ],
+  "goldenBootCandidates": [
+    { "player": "Kylian Mbappé", "team": "France", "odds": "Favorite" },
+    { "player": "Harry Kane", "team": "England", "odds": "Contender" },
+    { "player": "Vinícius Jr", "team": "Brazil", "odds": "Contender" },
+    { "player": "Julián Álvarez", "team": "Argentina", "odds": "Contender" },
+    { "player": "Lautaro Martínez", "team": "Argentina", "odds": "Contender" }
+  ],
+  "bracketPredictions": {
+    "roundOf32": [
+      "Argentina advances", "France advances", "Brazil advances", "England advances",
+      "Spain advances", "Portugal advances", "Netherlands advances", "Germany advances",
+      "Morocco advances", "Japan advances", "Colombia advances", "Croatia advances",
+      "Senegal advances", "Uruguay advances", "Belgium advances", "USA advances"
+    ],
+    "roundOf16": [
+      "Argentina advances", "France advances", "Brazil advances", "England advances",
+      "Spain advances", "Portugal advances", "Netherlands advances", "Germany advances"
+    ],
+    "quarterFinals": [
+      "Argentina advances", "France advances", "Brazil advances", "Spain advances"
+    ],
+    "semiFinals": [
+      "Argentina advances", "France advances"
+    ],
+    "final": "Argentina wins",
+    "thirdPlace": "Brazil wins"
+  },
+  "narratives": [
+    {
+      "headline": "Can Messi Defend the Crown?",
+      "summary": "At 38, Messi leads Argentina into uncharted territory — defending a World Cup title. No team has repeated since Brazil in 1962. The supporting cast is stronger than ever, but the weight of expectation is immense."
+    },
+    {
+      "headline": "The Mbappé Era Begins",
+      "summary": "Mbappé enters his prime with a France squad built around his speed and finishing. After a hat-trick in the 2022 final, he's hungry for the one trophy that eluded him — a second star for France."
+    },
+    {
+      "headline": "USA's Home Advantage",
+      "summary": "Hosting alongside Canada and Mexico, the USA has a golden opportunity. With a young, athletic squad and home crowds, can they surpass the quarterfinal ceiling from 2002?"
+    },
+    {
+      "headline": "Africa's Time to Shine?",
+      "summary": "Morocco broke the semifinal barrier in 2022. Now Senegal, Algeria, and a deeper African contingent believe a World Cup can be won by an African nation for the first time."
+    },
+    {
+      "headline": "48 Teams, 104 Matches — The Biggest Ever",
+      "summary": "The expanded format means more drama, more Cinderella stories, and more pressure on the favorites. The new Round of 32 adds an extra knockout stage — and more chances for chaos."
+    }
+  ]
+}

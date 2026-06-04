@@ -1,0 +1,44 @@
+{
+  "facts": [
+    { "id": 1, "category": "tournament", "fact": "The 2026 World Cup will be the first to feature 48 teams, up from 32 in previous tournaments.", "icon": "🏆" },
+    { "id": 2, "category": "history", "fact": "Brazil has won the most World Cups (5), followed by Germany and Italy with 4 each.", "icon": "🇧🇷" },
+    { "id": 3, "category": "host", "fact": "For the first time ever, 3 nations co-host: USA, Canada, and Mexico.", "icon": "🌎" },
+    { "id": 4, "category": "stadium", "fact": "MetLife Stadium (82,500 seats) will host the 2026 World Cup Final on July 19.", "icon": "🏟️" },
+    { "id": 5, "category": "player", "fact": "Lionel Messi holds the record for most World Cup appearances with 26 matches.", "icon": "🐐" },
+    { "id": 6, "category": "records", "fact": "The fastest goal in World Cup history was scored by Hakan Şükür in just 11 seconds (2002).", "icon": "⚡" },
+    { "id": 7, "category": "records", "fact": "The 1950 final at Maracanã drew an estimated 199,854 fans — the largest crowd ever.", "icon": "👥" },
+    { "id": 8, "category": "host", "fact": "Estadio Azteca becomes the first stadium to host World Cup matches in 3 different editions (1970, 1986, 2026).", "icon": "🇲🇽" },
+    { "id": 9, "category": "records", "fact": "Marta of Brazil is the all-time leading World Cup scorer across men's and women's tournaments with 17 goals.", "icon": "⭐" },
+    { "id": 10, "category": "tournament", "fact": "The 2026 tournament will feature 104 matches — the most in World Cup history.", "icon": "📊" },
+    { "id": 11, "category": "history", "fact": "Uruguay won the first ever World Cup in 1930, defeating Argentina 4-2 in the final.", "icon": "🏆" },
+    { "id": 12, "category": "history", "fact": "The World Cup trophy was stolen in 1966 and found by a dog named Pickles under a bush in London.", "icon": "🐕" },
+    { "id": 13, "category": "player", "fact": "Just Fontaine scored 13 goals in a single World Cup (1958) — a record that still stands.", "icon": "🎯" },
+    { "id": 14, "category": "stadium", "fact": "SoFi Stadium cost $5.5 billion to build, making it the most expensive stadium in the world.", "icon": "💰" },
+    { "id": 15, "category": "tournament", "fact": "The 2026 World Cup lasts 39 days, from June 11 to July 19, 2026.", "icon": "📅" },
+    { "id": 16, "category": "records", "fact": "Germany's Miroslav Klose is the all-time men's World Cup top scorer with 16 goals.", "icon": "⚽" },
+    { "id": 17, "category": "host", "fact": "Canada will host World Cup matches for the first time in the nation's history.", "icon": "🇨🇦" },
+    { "id": 18, "category": "history", "fact": "Only two nations have won back-to-back World Cups: Italy (1934, 1938) and Brazil (1958, 1962).", "icon": "🔄" },
+    { "id": 19, "category": "stadium", "fact": "AT&T Stadium features the world's largest HD video board, stretching 72 feet tall.", "icon": "📺" },
+    { "id": 20, "category": "player", "fact": "Pelé is the youngest World Cup winner at 17 years old, triumphing with Brazil in 1958.", "icon": "👑" },
+    { "id": 21, "category": "records", "fact": "The highest-scoring World Cup match was Austria 7-5 Switzerland in 1954 — 12 goals total.", "icon": "🔥" },
+    { "id": 22, "category": "tournament", "fact": "The Round of 32 is a brand new knockout stage, expanding from the previous Round of 16 format.", "icon": "🆕" },
+    { "id": 23, "category": "history", "fact": "India qualified for the 1950 World Cup but withdrew because they weren't allowed to play barefoot.", "icon": "🦶" },
+    { "id": 24, "category": "host", "fact": "Matches will span 4 time zones across North America, from Pacific to Eastern.", "icon": "🕐" }
+  ],
+  "stats": [
+    { "label": "Tournaments", "value": "23rd", "icon": "🏆" },
+    { "label": "Teams in 2026", "value": "48", "icon": "🌍" },
+    { "label": "Total Matches", "value": "104", "icon": "⚽" },
+    { "label": "Host Nations", "value": "3", "icon": "🤝" },
+    { "label": "Stadiums", "value": "16", "icon": "🏟️" },
+    { "label": "Days of Action", "value": "39", "icon": "📅" }
+  ],
+  "timeline": [
+    { "year": "1930", "event": "First World Cup held in Uruguay with 13 teams", "icon": "🌍" },
+    { "year": "1970", "event": "Brazil wins 3rd title, keeps Jules Rimet trophy permanently", "icon": "🇧🇷" },
+    { "year": "1994", "event": "USA hosts record-breaking World Cup with 3.5M attendees", "icon": "🇺🇸" },
+    { "year": "2002", "event": "First World Cup in Asia, co-hosted by South Korea & Japan", "icon": "🌏" },
+    { "year": "2022", "event": "Messi leads Argentina to glory in Qatar's winter World Cup", "icon": "🇦🇷" },
+    { "year": "2026", "event": "First 48-team World Cup across 3 North American nations", "icon": "🏆" }
+  ]
+}

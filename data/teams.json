@@ -1,0 +1,56 @@
+{
+  "confederations": {
+    "UEFA": {
+      "name": "UEFA (Europe)",
+      "teams": [
+        "England", "France", "Germany", "Spain", "Portugal", "Netherlands", 
+        "Belgium", "Croatia", "Austria", "Switzerland", "Sweden", "Scotland", 
+        "Norway", "Bosnia & Herzegovina", "Czech Republic", "Türkiye"
+      ]
+    },
+    "CONMEBOL": {
+      "name": "CONMEBOL (South America)",
+      "teams": [
+        "Argentina", "Brazil", "Uruguay", "Colombia", "Paraguay", "Ecuador"
+      ]
+    },
+    "CAF": {
+      "name": "CAF (Africa)",
+      "teams": [
+        "Morocco", "Senegal", "Algeria", "Egypt", "Ghana", "Tunisia", 
+        "South Africa", "Ivory Coast", "DR Congo", "Cape Verde"
+      ]
+    },
+    "AFC": {
+      "name": "AFC (Asia)",
+      "teams": [
+        "Japan", "South Korea", "Australia", "Iran", "Saudi Arabia", 
+        "Qatar", "Iraq", "Jordan", "Uzbekistan"
+      ]
+    },
+    "CONCACAF": {
+      "name": "CONCACAF (North/Central America & Caribbean)",
+      "teams": [
+        "USA", "Mexico", "Canada", "Panama", "Haiti", "Curaçao"
+      ]
+    },
+    "OFC": {
+      "name": "OFC (Oceania)",
+      "teams": [
+        "New Zealand"
+      ]
+    }
+  },
+  "allTeams": [
+    "Argentina", "Brazil", "Uruguay", "Colombia", "Paraguay", "Ecuador",
+    "England", "France", "Germany", "Spain", "Portugal", "Netherlands", 
+    "Belgium", "Croatia", "Austria", "Switzerland", "Sweden", "Scotland", 
+    "Norway", "Bosnia & Herzegovina", "Czech Republic", "Türkiye",
+    "Morocco", "Senegal", "Algeria", "Egypt", "Ghana", "Tunisia", 
+    "South Africa", "Ivory Coast", "DR Congo", "Cape Verde",
+    "Japan", "South Korea", "Australia", "Iran", "Saudi Arabia", 
+    "Qatar", "Iraq", "Jordan", "Uzbekistan",
+    "USA", "Mexico", "Canada", "Panama", "Haiti", "Curaçao",
+    "New Zealand"
+  ]
+}
