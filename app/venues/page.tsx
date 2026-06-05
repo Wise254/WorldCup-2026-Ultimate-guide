@@ -15,32 +15,32 @@ scheduleData.matches.forEach((m) => {
 
 function getVenueId(stadium: string): string {
   const map: Record<string, string> = {
-    "BMO Field": "bmo-field",
-    "BC Place": "bc-place",
+    "Toronto Stadium": "bmo-field",
+    "Vancouver Stadium": "bc-place",
     "Estadio Azteca": "estadio-azteca",
     "Estadio Akron": "estadio-akron",
-    "Estadio BBVA": "estadio-bbva",
-    "MetLife Stadium": "metlife-stadium",
-    "AT&T Stadium": "at&t-stadium",
-    "SoFi Stadium": "sofi-stadium",
-    "Mercedes-Benz Stadium": "mercedes-benz-stadium",
-    "Hard Rock Stadium": "hard-rock-stadium",
-    "Lumen Field": "lumen-field",
-    "Arrowhead Stadium": "arrowhead-stadium",
-    "NRG Stadium": "nrg-stadium",
-    "Levi's Stadium": "levi's-stadium",
-    "Gillette Stadium": "gillette-stadium",
-    "Lincoln Financial Field": "lincoln-financial-field",
+    "Estadio Monterrey": "estadio-bbva",
+    "New York New Jersey Stadium": "metlife-stadium",
+    "Dallas Stadium": "at&t-stadium",
+    "Los Angeles Stadium": "sofi-stadium",
+    "Atlanta Stadium": "mercedes-benz-stadium",
+    "Miami Stadium": "hard-rock-stadium",
+    "Seattle Stadium": "lumen-field",
+    "Kansas City Stadium": "arrowhead-stadium",
+    "Houston Stadium": "nrg-stadium",
+    "San Francisco Bay Area Stadium": "levi's-stadium",
+    "Boston Stadium": "gillette-stadium",
+    "Philadelphia Stadium": "lincoln-financial-field",
   };
   return map[stadium] || "";
 }
 
 const venueHighlights: Record<string, { landmark: string; funFact: string; altitude?: string; opened: string }> = {
+  "bmo-field": { landmark: "CN Tower", funFact: "Lakeside stadium in exhibition grounds", opened: "2007" },
+  "bc-place": { landmark: "Harbour & Mountains", funFact: "Largest cable-supported retractable roof", opened: "1983" },
   "estadio-azteca": { landmark: "Ancient Pyramids", funFact: "Only stadium to host 3 World Cup openers", altitude: "2,200m", opened: "1966" },
   "estadio-akron": { landmark: "Tequila Fields", funFact: "Shaped like a volcano crater", altitude: "1,566m", opened: "2010" },
   "estadio-bbva": { landmark: "Cerro de la Silla", funFact: "Mountain-backdrop stadium", altitude: "537m", opened: "2015" },
-  "bmo-field": { landmark: "CN Tower", funFact: "Lakeside stadium in exhibition grounds", opened: "2007" },
-  "bc-place": { landmark: "Harbour & Mountains", funFact: "Largest cable-supported retractable roof", opened: "1983" },
   "metlife-stadium": { landmark: "NYC Skyline", funFact: "Host of the 2026 World Cup Final", opened: "2010" },
   "at&t-stadium": { landmark: "Texas Star", funFact: "World's largest HD video board", opened: "2009" },
   "sofi-stadium": { landmark: "Hollywood Sign", funFact: "Most expensive stadium ever built", opened: "2020" },
@@ -62,7 +62,6 @@ const countryFlags: Record<string, string> = {
 };
 
 function CityIllustration({ venueId }: { venueId: string }) {
-  // All Math.random() calls use fixed seed-style patterns, but wrapped in mounted check from parent
   switch (venueId) {
     case "estadio-azteca":
       return (
@@ -366,6 +365,7 @@ function VenueCard({ venue, country, index }: { venue: any; country: string; ind
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
                 onError={() => setImgError(true)}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                unoptimized
               />
             ) : (
               <div className="absolute inset-0 bg-gradient-to-br from-gray-300 to-gray-500 dark:from-gray-600 dark:to-gray-800 flex items-center justify-center">
