@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getAllMatches, addMatch } from "@/lib/data-store";
+import fs from "fs";
+import path from "path";
 
 export async function POST(request: NextRequest) {
   try {
@@ -7,22 +8,18 @@ export async function POST(request: NextRequest) {
     const { homeTeam, awayTeam, date, time, venueId, stage } = body;
 
     if (!homeTeam || !awayTeam || !date || !time || !venueId || !stage) {
-      return NextResponse.json(
-        { error: "All fields are required" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "All fields are required" }, { status: 400 });
     }
 
     if (homeTeam === awayTeam) {
-      return NextResponse.json(
-        { error: "A team cannot play against itself" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "A team cannot play against itself" }, { status: 400 });
     }
 
-    // Check for duplicate
-    const matches = await getAllMatches();
-    const duplicate = matches.find(
+    const schedulePath = path.join(process.cwd(), "data", "schedule.json");
+    const content = fs.readFileSync(schedulePath, "utf8");
+    const data = JSON.parse(content);
+
+    const duplicate = data.matches.find(
       (m: any) =>
         m.stage === stage &&
         ((m.homeTeam === homeTeam && m.awayTeam === awayTeam) ||
@@ -36,18 +33,29 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const newMatch = await addMatch({
+    const maxId = data.matches.reduce((max: number, m: any) => {
+      const num = parseInt(m.id);
+      return num > max ? num : max;
+    }, 0);
+
+    const newMatch = {
+      id: String(maxId + 1),
       stage,
       homeTeam,
       awayTeam,
+      homeScore: null,
+      awayScore: null,
       date,
       time,
       venueId,
-    });
+    };
+
+    data.matches.push(newMatch);
+    fs.writeFileSync(schedulePath, JSON.stringify(data, null, 2));
 
     return NextResponse.json(newMatch, { status: 201 });
-  } catch (error) {
+  } catch (error: any) {
     console.error("Error adding match:", error);
-    return NextResponse.json({ error: "Failed to add match" }, { status: 500 });
+    return NextResponse.json({ error: error.message || "Failed to add match" }, { status: 500 });
   }
 }
