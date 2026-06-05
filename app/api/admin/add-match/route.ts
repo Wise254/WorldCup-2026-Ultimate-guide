@@ -2,6 +2,22 @@ import { NextRequest, NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 
+const TMP_SCHEDULE = "/tmp/schedule.json";
+const LOCAL_SCHEDULE = path.join(process.cwd(), "data", "schedule.json");
+
+function readSchedule(): any {
+  if (fs.existsSync(TMP_SCHEDULE)) {
+    const content = fs.readFileSync(TMP_SCHEDULE, "utf8");
+    return JSON.parse(content);
+  }
+  const content = fs.readFileSync(LOCAL_SCHEDULE, "utf8");
+  return JSON.parse(content);
+}
+
+function writeSchedule(data: any): void {
+  fs.writeFileSync(TMP_SCHEDULE, JSON.stringify(data, null, 2));
+}
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
@@ -15,9 +31,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "A team cannot play against itself" }, { status: 400 });
     }
 
-    const schedulePath = path.join(process.cwd(), "data", "schedule.json");
-    const content = fs.readFileSync(schedulePath, "utf8");
-    const data = JSON.parse(content);
+    const data = readSchedule();
 
     const duplicate = data.matches.find(
       (m: any) =>
@@ -51,7 +65,7 @@ export async function POST(request: NextRequest) {
     };
 
     data.matches.push(newMatch);
-    fs.writeFileSync(schedulePath, JSON.stringify(data, null, 2));
+    writeSchedule(data);
 
     return NextResponse.json(newMatch, { status: 201 });
   } catch (error: any) {

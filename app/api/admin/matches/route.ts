@@ -1,12 +1,21 @@
 import { NextResponse } from "next/server";
-import { getAllMatches } from "@/lib/data-store";
+import fs from "fs";
+import path from "path";
+
+const TMP_SCHEDULE = "/tmp/schedule.json";
+const LOCAL_SCHEDULE = path.join(process.cwd(), "data", "schedule.json");
+
+function readSchedule(): any {
+  if (fs.existsSync(TMP_SCHEDULE)) {
+    return JSON.parse(fs.readFileSync(TMP_SCHEDULE, "utf8"));
+  }
+  return JSON.parse(fs.readFileSync(LOCAL_SCHEDULE, "utf8"));
+}
 
 function getVenueById(id: string): any {
   try {
-    const fs = require("fs");
-    const path = require("path");
-    const filePath = path.join(process.cwd(), "data", "venues.json");
-    const content = fs.readFileSync(filePath, "utf8");
+    const venuesPath = path.join(process.cwd(), "data", "venues.json");
+    const content = fs.readFileSync(venuesPath, "utf8");
     const data = JSON.parse(content);
     
     if (data.allVenues) {
@@ -25,7 +34,8 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const stage = searchParams.get("stage");
     
-    let matches = await getAllMatches();
+    const data = readSchedule();
+    let matches = data.matches || [];
     
     if (stage && stage !== "All") {
       matches = matches.filter((match: any) => match.stage === stage);

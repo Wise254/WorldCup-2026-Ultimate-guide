@@ -2,6 +2,23 @@ import { NextRequest, NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 
+const TMP_SCHEDULE = "/tmp/schedule.json";
+const LOCAL_SCHEDULE = path.join(process.cwd(), "data", "schedule.json");
+
+function readSchedule(): any {
+  // Read from /tmp first (has latest changes), fall back to committed file
+  if (fs.existsSync(TMP_SCHEDULE)) {
+    const content = fs.readFileSync(TMP_SCHEDULE, "utf8");
+    return JSON.parse(content);
+  }
+  const content = fs.readFileSync(LOCAL_SCHEDULE, "utf8");
+  return JSON.parse(content);
+}
+
+function writeSchedule(data: any): void {
+  fs.writeFileSync(TMP_SCHEDULE, JSON.stringify(data, null, 2));
+}
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
@@ -11,9 +28,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "matchId is required" }, { status: 400 });
     }
 
-    const schedulePath = path.join(process.cwd(), "data", "schedule.json");
-    const content = fs.readFileSync(schedulePath, "utf8");
-    const data = JSON.parse(content);
+    const data = readSchedule();
     
     const matchIndex = data.matches.findIndex((m: any) => m.id === matchId);
     if (matchIndex === -1) {
@@ -24,7 +39,7 @@ export async function POST(request: NextRequest) {
     data.matches[matchIndex].awayScore = awayScore;
     data.matches[matchIndex].status = homeScore !== null && awayScore !== null ? "finished" : "upcoming";
 
-    fs.writeFileSync(schedulePath, JSON.stringify(data, null, 2));
+    writeSchedule(data);
 
     return NextResponse.json(data.matches[matchIndex], { status: 200 });
   } catch (error: any) {
