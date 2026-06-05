@@ -25,7 +25,6 @@ interface Match {
   group?: string;
 }
 
-const scheduleData = require("@/data/schedule.json") as { matches: Match[] } | Match[];
 const venuesData = require("@/data/venues.json") as {
   countries: Array<{
     name: string;
@@ -64,78 +63,41 @@ const stages = [
   "Final",
 ];
 
-// Map API stage names to filter names (handle "Third Place" vs "Third-place Match")
 const stageNameMap: Record<string, string> = {
   "Third Place": "Third-place Match",
 };
 
-// Distinct accent colors for knockout stages
 const knockoutAccents: Record<string, { gradient: string; icon: string }> = {
-  "Round of 32": {
-    gradient: "from-slate-500 to-slate-700",
-    icon: "🏟️",
-  },
-  "Round of 16": {
-    gradient: "from-emerald-500 to-teal-600",
-    icon: "⚡",
-  },
-  "Quarter-finals": {
-    gradient: "from-blue-500 to-indigo-600",
-    icon: "🔥",
-  },
-  "Semi-finals": {
-    gradient: "from-purple-500 to-violet-600",
-    icon: "⭐",
-  },
-  "Third-place Match": {
-    gradient: "from-amber-500 to-orange-600",
-    icon: "🥉",
-  },
-  Final: {
-    gradient: "from-yellow-400 via-amber-500 to-red-500",
-    icon: "👑",
-  },
+  "Round of 32": { gradient: "from-slate-500 to-slate-700", icon: "🏟️" },
+  "Round of 16": { gradient: "from-emerald-500 to-teal-600", icon: "⚡" },
+  "Quarter-finals": { gradient: "from-blue-500 to-indigo-600", icon: "🔥" },
+  "Semi-finals": { gradient: "from-purple-500 to-violet-600", icon: "⭐" },
+  "Third-place Match": { gradient: "from-amber-500 to-orange-600", icon: "🥉" },
+  Final: { gradient: "from-yellow-400 via-amber-500 to-red-500", icon: "👑" },
 };
 
 export default function SchedulePage() {
   const [selectedStage, setSelectedStage] = useState("All");
-  const [knockoutMatches, setKnockoutMatches] = useState<Match[]>([]);
-  const [isLoadingKnockout, setIsLoadingKnockout] = useState(true);
+  const [allMatches, setAllMatches] = useState<Match[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Fetch knockout matches from API
+  // Fetch ALL matches from API (not just knockout)
   useEffect(() => {
-    const fetchKnockoutMatches = async () => {
+    const fetchMatches = async () => {
       try {
         const res = await fetch("/api/admin/matches");
         const data = await res.json();
         const apiMatches: Match[] = Array.isArray(data) ? data : data.matches || [];
-        const knockout = apiMatches.filter((m) => m.stage !== "Group Stage");
-        setKnockoutMatches(knockout);
+        setAllMatches(apiMatches);
       } catch (err) {
-        console.error("Failed to fetch knockout matches:", err);
-        setKnockoutMatches([]);
+        console.error("Failed to fetch matches:", err);
+        setAllMatches([]);
       } finally {
-        setIsLoadingKnockout(false);
+        setIsLoading(false);
       }
     };
-    fetchKnockoutMatches();
+    fetchMatches();
   }, []);
-
-  // Build complete match list: static group stage + API knockout matches
-  const allMatches = useMemo(() => {
-    let staticMatches: Match[] = [];
-    if (scheduleData && "matches" in scheduleData && Array.isArray(scheduleData.matches)) {
-      staticMatches = scheduleData.matches;
-    } else if (Array.isArray(scheduleData)) {
-      staticMatches = scheduleData;
-    }
-
-    // Deduplicate by ID (API knockouts take priority for score updates)
-    const knockoutIds = new Set(knockoutMatches.map((m) => m.id));
-    const filteredStatic = staticMatches.filter((m) => !knockoutIds.has(m.id));
-
-    return [...filteredStatic, ...knockoutMatches];
-  }, [knockoutMatches]);
 
   // Filter matches by selected stage
   const matches = useMemo(() => {
@@ -163,15 +125,15 @@ export default function SchedulePage() {
 
   const sortedDates = Object.keys(matchesByDate).sort();
 
-  // Counts
+  const groupStageCount = allMatches.filter((m) => m.stage === "Group Stage").length;
   const knockoutCount = allMatches.filter((m) => m.stage !== "Group Stage").length;
   const isKnockoutStage = selectedStage !== "All" && selectedStage !== "Group Stage";
-  const isFilteredEmpty = matches.length === 0 && !isLoadingKnockout;
+  const isFilteredEmpty = matches.length === 0 && !isLoading;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50/30 to-gray-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
-        {/* Header — ALWAYS VISIBLE */}
+        {/* Header */}
         <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: -30 }}
@@ -202,18 +164,9 @@ export default function SchedulePage() {
             )}
             <span>🏟️</span>
           </motion.div>
-          {isLoadingKnockout && (
-            <motion.p
-              className="text-xs text-gray-400 dark:text-gray-500 mt-2"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-            >
-              Checking for knockout matches...
-            </motion.p>
-          )}
         </motion.div>
 
-        {/* Stage Filter Pills — ALWAYS VISIBLE */}
+        {/* Stage Filter Pills */}
         <motion.div
           className="mb-8 flex flex-wrap justify-center gap-2"
           initial={{ opacity: 0, y: 20 }}
@@ -252,11 +205,6 @@ export default function SchedulePage() {
                 transition={{ delay: 0.3 + index * 0.04 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                title={
-                  stage === "All"
-                    ? "Show all matches (Group Stage + Knockout)"
-                    : `Filter by ${stage}`
-                }
               >
                 {stage === "All" && "🌍 "}
                 {stage === "Group Stage" && "🏆 "}
@@ -267,8 +215,8 @@ export default function SchedulePage() {
           })}
         </motion.div>
 
-        {/* Content Area */}
-        {isLoadingKnockout && allMatches.length === 0 ? (
+        {/* Content */}
+        {isLoading ? (
           <div className="flex justify-center py-16">
             <motion.div
               className="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full"
@@ -277,28 +225,15 @@ export default function SchedulePage() {
             />
           </div>
         ) : isFilteredEmpty ? (
-          /* Empty state for selected filter — filter pills remain visible above */
-          <motion.div
-            className="text-center py-16"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-          >
+          <motion.div className="text-center py-16" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
             <span className="text-6xl block mb-4">
-              {isKnockoutStage
-                ? knockoutAccents[selectedStage]?.icon || "🏟️"
-                : "📋"}
+              {isKnockoutStage ? knockoutAccents[selectedStage]?.icon || "🏟️" : "📋"}
             </span>
             <p className="text-gray-500 dark:text-gray-400 text-lg font-medium">
               {isKnockoutStage
                 ? `No ${selectedStage} matches scheduled yet.`
                 : "No matches scheduled for this stage yet."}
             </p>
-            <p className="text-gray-400 dark:text-gray-500 mt-2 max-w-md mx-auto">
-              {isKnockoutStage
-                ? "Knockout matches will be added by the admin once the group stage concludes. Use the filters above to view other stages."
-                : "The full schedule will be released closer to the tournament."}
-            </p>
-            {/* Quick-jump to stages that have content */}
             <div className="mt-6 flex flex-wrap justify-center gap-2">
               <button
                 onClick={() => setSelectedStage("All")}
@@ -310,12 +245,11 @@ export default function SchedulePage() {
                 onClick={() => setSelectedStage("Group Stage")}
                 className="px-4 py-2 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium transition-colors shadow-md border border-gray-200 dark:border-gray-700"
               >
-                🏆 Group Stage (72 matches)
+                🏆 Group Stage
               </button>
             </div>
           </motion.div>
         ) : (
-          /* Match list */
           <div className="space-y-10">
             <AnimatePresence mode="wait">
               {sortedDates.map((date, dateIndex) => {
@@ -330,7 +264,6 @@ export default function SchedulePage() {
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.4, delay: dateIndex * 0.05 }}
                   >
-                    {/* Date Header */}
                     <div className="flex items-center gap-4 mb-5">
                       <div
                         className={`flex-1 h-px bg-gradient-to-r from-transparent ${
@@ -364,7 +297,6 @@ export default function SchedulePage() {
                       />
                     </div>
 
-                    {/* Match Cards */}
                     <div className="space-y-4">
                       {dateMatches.map((match, matchIndex) => {
                         const venue = venueMap[match.venueId];
@@ -415,7 +347,6 @@ export default function SchedulePage() {
           </div>
         )}
 
-        {/* Bottom Note — ALWAYS VISIBLE */}
         <motion.p
           className="text-center text-sm text-gray-400 dark:text-gray-500 mt-12"
           initial={{ opacity: 0 }}
