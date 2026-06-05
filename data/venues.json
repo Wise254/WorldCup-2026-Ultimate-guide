@@ -3,51 +3,51 @@
     {
       "name": "Canada",
       "venues": [
-        { "city": "Toronto", "stadium": "Toronto Stadium", "capacity": 30000, "image": "Toronto stadium.jpg" },
-        { "city": "Vancouver", "stadium": "Vancouver Stadium", "capacity": 54500, "image": "BC Place Stadium.jpg" }
+        { "city": "Toronto", "stadium": "Toronto Stadium", "capacity": 30000, "image": "Toronto stadium.JPG" },
+        { "city": "Vancouver", "stadium": "Vancouver Stadium", "capacity": 54500, "image": "Vancouver Stadium.jpg" }
       ]
     },
     {
       "name": "Mexico",
       "venues": [
-        { "city": "Mexico City", "stadium": "Estadio Azteca", "capacity": 87500, "image": "Estadio Azteca.jpg" },
+        { "city": "Mexico City", "stadium": "Estadio Azteca", "capacity": 87500, "image": "Estadio Azteca.JPG" },
         { "city": "Guadalajara", "stadium": "Estadio Akron", "capacity": 46800, "image": "Estadio Akron.jpg" },
-        { "city": "Monterrey", "stadium": "Estadio Monterrey", "capacity": 53500, "image": "BBVA Stadium.jpg" }
+        { "city": "Monterrey", "stadium": "Estadio Monterrey", "capacity": 53500, "image": "Estadio Monterrey.jpg" }
       ]
     },
     {
       "name": "United States",
       "venues": [
-        { "city": "New York/New Jersey", "stadium": "New York New Jersey Stadium", "capacity": 82500, "image": "MetLife Stadium.jpg" },
-        { "city": "Dallas", "stadium": "Dallas Stadium", "capacity": 80000, "image": "AT&T Stadium.jpg" },
-        { "city": "Los Angeles", "stadium": "Los Angeles Stadium", "capacity": 70240, "image": "So-fi stadium.jpg" },
-        { "city": "Atlanta", "stadium": "Atlanta Stadium", "capacity": 71000, "image": "Mercedes Benz Stadium.jpg" },
+        { "city": "New York/New Jersey", "stadium": "New York New Jersey Stadium", "capacity": 82500, "image": "New York New Jersey Stadium.JPG" },
+        { "city": "Dallas", "stadium": "Dallas Stadium", "capacity": 80000, "image": "Dallas Stadium.JPG" },
+        { "city": "Los Angeles", "stadium": "Los Angeles Stadium", "capacity": 70240, "image": "Los Angeles Stadium.jpg" },
+        { "city": "Atlanta", "stadium": "Atlanta Stadium", "capacity": 71000, "image": "Atlanta Stadium.jpg" },
         { "city": "Miami", "stadium": "Miami Stadium", "capacity": 65326, "image": "Miami Stadium.jpg" },
-        { "city": "Seattle", "stadium": "Seattle Stadium", "capacity": 69000, "image": "Seattle Stadium.jpg" },
-        { "city": "Kansas City", "stadium": "Kansas City Stadium", "capacity": 76416, "image": "Kansas Stadium.jpg" },
-        { "city": "Houston", "stadium": "Houston Stadium", "capacity": 72220, "image": "Houston Stadium.jpg" },
-        { "city": "San Francisco Bay Area", "stadium": "San Francisco Bay Area Stadium", "capacity": 68500, "image": "Levi's Stadium.jpg" },
-        { "city": "Boston", "stadium": "Boston Stadium", "capacity": 65878, "image": "Boston Stadium.jpg" },
-        { "city": "Philadelphia", "stadium": "Philadelphia Stadium", "capacity": 69176, "image": "Philadelphia Stadium.jpg" }
+        { "city": "Seattle", "stadium": "Seattle Stadium", "capacity": 69000, "image": "Seattle Stadium.JPG" },
+        { "city": "Kansas City", "stadium": "Kansas City Stadium", "capacity": 76416, "image": "Kansas Stadium.JPG" },
+        { "city": "Houston", "stadium": "Houston Stadium", "capacity": 72220, "image": "Houston Stadium.JPG" },
+        { "city": "San Francisco Bay Area", "stadium": "San Francisco Bay Area Stadium", "capacity": 68500, "image": "San Francisco Bay Area Stadium.jpg" },
+        { "city": "Boston", "stadium": "Boston Stadium", "capacity": 65878, "image": "Boston Stadium.JPG" },
+        { "city": "Philadelphia", "stadium": "Philadelphia Stadium", "capacity": 69176, "image": "Philadelphia Stadium.JPG" }
       ]
     }
   ],
   "allVenues": [
-    { "city": "Toronto", "stadium": "Toronto Stadium", "country": "Canada", "capacity": 30000, "image": "Toronto stadium.jpg" },
-    { "city": "Vancouver", "stadium": "Vancouver Stadium", "country": "Canada", "capacity": 54500, "image": "BC Place Stadium.jpg" },
-    { "city": "Mexico City", "stadium": "Estadio Azteca", "country": "Mexico", "capacity": 87500, "image": "Estadio Azteca.jpg" },
+    { "city": "Toronto", "stadium": "Toronto Stadium", "country": "Canada", "capacity": 30000, "image": "Toronto stadium.JPG" },
+    { "city": "Vancouver", "stadium": "Vancouver Stadium", "country": "Canada", "capacity": 54500, "image": "Vancouver Stadium.jpg" },
+    { "city": "Mexico City", "stadium": "Estadio Azteca", "country": "Mexico", "capacity": 87500, "image": "Estadio Azteca.JPG" },
     { "city": "Guadalajara", "stadium": "Estadio Akron", "country": "Mexico", "capacity": 46800, "image": "Estadio Akron.jpg" },
-    { "city": "Monterrey", "stadium": "Estadio Monterrey", "country": "Mexico", "capacity": 53500, "image": "BBVA Stadium.jpg" },
-    { "city": "New York/New Jersey", "stadium": "New York New Jersey Stadium", "country": "USA", "capacity": 82500, "image": "MetLife Stadium.jpg" },
-    { "city": "Dallas", "stadium": "Dallas Stadium", "country": "USA", "capacity": 80000, "image": "AT&T Stadium.jpg" },
-    { "city": "Los Angeles", "stadium": "Los Angeles Stadium", "country": "USA", "capacity": 70240, "image": "So-fi stadium.jpg" },
-    { "city": "Atlanta", "stadium": "Atlanta Stadium", "country": "USA", "capacity": 71000, "image": "Mercedes Benz Stadium.jpg" },
+    { "city": "Monterrey", "stadium": "Estadio Monterrey", "country": "Mexico", "capacity": 53500, "image": "Estadio Monterrey.jpg" },
+    { "city": "New York/New Jersey", "stadium": "New York New Jersey Stadium", "country": "USA", "capacity": 82500, "image": "New York New Jersey Stadium.JPG" },
+    { "city": "Dallas", "stadium": "Dallas Stadium", "country": "USA", "capacity": 80000, "image": "Dallas Stadium.JPG" },
+    { "city": "Los Angeles", "stadium": "Los Angeles Stadium", "country": "USA", "capacity": 70240, "image": "Los Angeles Stadium.jpg" },
+    { "city": "Atlanta", "stadium": "Atlanta Stadium", "country": "USA", "capacity": 71000, "image": "Atlanta Stadium.jpg" },
     { "city": "Miami", "stadium": "Miami Stadium", "country": "USA", "capacity": 65326, "image": "Miami Stadium.jpg" },
-    { "city": "Seattle", "stadium": "Seattle Stadium", "country": "USA", "capacity": 69000, "image": "Seattle Stadium.jpg" },
-    { "city": "Kansas City", "stadium": "Kansas City Stadium", "country": "USA", "capacity": 76416, "image": "Kansas Stadium.jpg" },
-    { "city": "Houston", "stadium": "Houston Stadium", "country": "USA", "capacity": 72220, "image": "Houston Stadium.jpg" },
-    { "city": "San Francisco Bay Area", "stadium": "San Francisco Bay Area Stadium", "country": "USA", "capacity": 68500, "image": "Levi's Stadium.jpg" },
-    { "city": "Boston", "stadium": "Boston Stadium", "country": "USA", "capacity": 65878, "image": "Boston Stadium.jpg" },
-    { "city": "Philadelphia", "stadium": "Philadelphia Stadium", "country": "USA", "capacity": 69176, "image": "Philadelphia Stadium.jpg" }
+    { "city": "Seattle", "stadium": "Seattle Stadium", "country": "USA", "capacity": 69000, "image": "Seattle Stadium.JPG" },
+    { "city": "Kansas City", "stadium": "Kansas City Stadium", "country": "USA", "capacity": 76416, "image": "Kansas Stadium.JPG" },
+    { "city": "Houston", "stadium": "Houston Stadium", "country": "USA", "capacity": 72220, "image": "Houston Stadium.JPG" },
+    { "city": "San Francisco Bay Area", "stadium": "San Francisco Bay Area Stadium", "country": "USA", "capacity": 68500, "image": "San Francisco Bay Area Stadium.jpg" },
+    { "city": "Boston", "stadium": "Boston Stadium", "country": "USA", "capacity": 65878, "image": "Boston Stadium.JPG" },
+    { "city": "Philadelphia", "stadium": "Philadelphia Stadium", "country": "USA", "capacity": 69176, "image": "Philadelphia Stadium.JPG" }
   ]
 }
