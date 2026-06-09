@@ -64,7 +64,7 @@ function CountdownTimer({ targetDate, targetTime }: { targetDate: string; target
       const diff = target.getTime() - now.getTime();
 
       if (diff <= 0) {
-        setTimeLeft("Starting soon!");
+        setTimeLeft("Kickoff!");
         return;
       }
 
@@ -93,6 +93,11 @@ function CountdownTimer({ targetDate, targetTime }: { targetDate: string; target
   );
 }
 
+function getGoogleSearchUrl(homeTeam: string, awayTeam: string): string {
+  const query = encodeURIComponent(`${homeTeam} vs ${awayTeam} World Cup 2026 live score`);
+  return `https://www.google.com/search?q=${query}`;
+}
+
 export default function MatchCard({
   homeTeam,
   awayTeam,
@@ -107,14 +112,21 @@ export default function MatchCard({
 }: MatchCardProps) {
   const isPlayed =
     homeScore !== undefined && homeScore !== null && awayScore !== undefined && awayScore !== null;
-  const isLive = false;
-  const matchDate = new Date(date);
-  const isUpcoming = matchDate > new Date();
+
+  // A match is "live" if it's past kickoff time but no score has been entered yet
+  // and it's within 3 hours of kickoff (typical match duration window)
+  const kickoffTime = new Date(`${date}T${time}`);
+  const now = new Date();
+  const matchEndEstimate = new Date(kickoffTime.getTime() + 3 * 60 * 60 * 1000); // +3 hours
+  const isLive = !isPlayed && now >= kickoffTime && now <= matchEndEstimate;
+  const isUpcoming = now < kickoffTime;
+  const isPastUnscored = !isPlayed && !isUpcoming && !isLive; // match ended but no score entered
 
   const homeColors = getTeamColors(homeTeam);
   const awayColors = getTeamColors(awayTeam);
   const homeRank = getFifaRank(homeTeam);
   const awayRank = getFifaRank(awayTeam);
+  const liveScoreUrl = getGoogleSearchUrl(homeTeam, awayTeam);
 
   const getStatusBadge = () => {
     if (isLive) {
@@ -129,6 +141,13 @@ export default function MatchCard({
       return (
         <span className="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 text-xs font-bold px-3 py-1 rounded-full">
           FINISHED
+        </span>
+      );
+    }
+    if (isPastUnscored) {
+      return (
+        <span className="bg-yellow-100 dark:bg-yellow-900/40 text-yellow-600 dark:text-yellow-400 text-xs font-bold px-3 py-1 rounded-full">
+          AWAITING
         </span>
       );
     }
@@ -154,6 +173,15 @@ export default function MatchCard({
         <div className="w-8 bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent" />
         <div className="flex-1" style={{ backgroundColor: awayColors.primary }} />
       </div>
+
+      {/* LIVE pulse bar */}
+      {isLive && (
+        <motion.div
+          className="h-0.5 bg-gradient-to-r from-red-500 via-red-400 to-red-500"
+          animate={{ opacity: [0.5, 1, 0.5] }}
+          transition={{ duration: 1, repeat: Infinity }}
+        />
+      )}
 
       <div className="p-4 sm:p-5">
         {/* Stage & Status Header */}
@@ -192,7 +220,7 @@ export default function MatchCard({
             </div>
           </div>
 
-          {/* Score */}
+          {/* Score / Status Center */}
           <div className="flex-shrink-0 text-center px-4">
             {isPlayed ? (
               <motion.div
@@ -209,7 +237,44 @@ export default function MatchCard({
                   {awayScore}
                 </motion.span>
               </motion.div>
+            ) : isLive ? (
+              /* LIVE — Game Active */
+              <a
+                href={liveScoreUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-1.5 group/live"
+              >
+                <motion.span
+                  className="text-xl sm:text-2xl font-black text-red-500 dark:text-red-400"
+                  animate={{ scale: [1, 1.08, 1] }}
+                  transition={{ duration: 1.2, repeat: Infinity }}
+                >
+                  VS
+                </motion.span>
+                <motion.span
+                  className="text-[10px] sm:text-xs font-semibold text-red-500 dark:text-red-400 bg-red-50 dark:bg-red-900/20 px-3 py-1.5 rounded-full whitespace-nowrap group-hover/live:bg-red-100 dark:group-hover/live:bg-red-900/40 transition-colors"
+                  animate={{ opacity: [0.7, 1, 0.7] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                >
+                  Game Active · View Live Score →
+                </motion.span>
+              </a>
+            ) : isPastUnscored ? (
+              /* Past kickoff but no score yet */
+              <a
+                href={liveScoreUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-1 group/live"
+              >
+                <span className="text-xl sm:text-2xl font-black text-gray-300 dark:text-gray-600">VS</span>
+                <span className="text-[10px] sm:text-xs font-medium text-yellow-600 dark:text-yellow-400 bg-yellow-50 dark:bg-yellow-900/20 px-3 py-1.5 rounded-full whitespace-nowrap group-hover/live:bg-yellow-100 dark:group-hover/live:bg-yellow-900/40 transition-colors">
+                  Check Live Score →
+                </span>
+              </a>
             ) : isUpcoming ? (
+              /* Upcoming */
               <div className="flex flex-col items-center gap-1">
                 <span className="text-xl sm:text-2xl font-black text-gray-300 dark:text-gray-600">VS</span>
                 {homeRank && awayRank && (
@@ -218,6 +283,7 @@ export default function MatchCard({
                 <CountdownTimer targetDate={date} targetTime={time} />
               </div>
             ) : (
+              /* Fallback */
               <div className="flex flex-col items-center gap-1">
                 <span className="text-xl sm:text-2xl font-black text-gray-300 dark:text-gray-600">VS</span>
                 {homeRank && awayRank && (
@@ -254,7 +320,7 @@ export default function MatchCard({
               <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
-              {matchDate.toLocaleDateString("en-US", { month: "short", day: "numeric" })}
+              {new Date(`${date}T${time}`).toLocaleDateString("en-US", { month: "short", day: "numeric" })}
             </span>
             <span className="flex items-center gap-1">
               <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -273,8 +339,13 @@ export default function MatchCard({
         </div>
       </div>
 
+      {/* Hover glow */}
       <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-        <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-pink-500/5" />
+        <div className={`absolute inset-0 rounded-xl ${
+          isLive 
+            ? "bg-gradient-to-r from-red-500/10 via-red-400/5 to-red-500/10" 
+            : "bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-pink-500/5"
+        }`} />
       </div>
     </motion.div>
   );
