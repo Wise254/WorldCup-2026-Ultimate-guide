@@ -2,20 +2,32 @@ import { NextRequest, NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 
-const TMP_SCHEDULE = "/tmp/schedule.json";
-const LOCAL_SCHEDULE = path.join(process.cwd(), "data", "schedule.json");
+const JSONBIN_BIN_ID = "6a2e7d16da38895dfebdfbee";
+const JSONBIN_MASTER_KEY = "$2a$10$WDNAaLBJphDla2zWubx7TOoIo82StPFucg.65ylrtq4RRS1JF33Ju";
 
-function readSchedule(): any {
-  if (fs.existsSync(TMP_SCHEDULE)) {
-    const content = fs.readFileSync(TMP_SCHEDULE, "utf8");
-    return JSON.parse(content);
+async function readSchedule(): Promise<any> {
+  try {
+    const res = await fetch(`https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}/latest`, {
+      headers: { "X-Master-Key": JSONBIN_MASTER_KEY },
+    });
+    if (!res.ok) throw new Error(`Bin read failed: ${res.status}`);
+    const json = await res.json();
+    return json.record;
+  } catch {
+    const schedulePath = path.join(process.cwd(), "data", "schedule.json");
+    return JSON.parse(fs.readFileSync(schedulePath, "utf8"));
   }
-  const content = fs.readFileSync(LOCAL_SCHEDULE, "utf8");
-  return JSON.parse(content);
 }
 
-function writeSchedule(data: any): void {
-  fs.writeFileSync(TMP_SCHEDULE, JSON.stringify(data, null, 2));
+async function writeSchedule(data: any): Promise<void> {
+  await fetch(`https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      "X-Master-Key": JSONBIN_MASTER_KEY,
+    },
+    body: JSON.stringify(data),
+  });
 }
 
 export async function POST(request: NextRequest) {
@@ -27,18 +39,17 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "matchId is required" }, { status: 400 });
     }
 
-    const data = readSchedule();
+    const data = await readSchedule();
     const matchIndex = data.matches.findIndex((m: any) => m.id === matchId);
 
     if (matchIndex === -1) {
       return NextResponse.json({ error: "Match not found" }, { status: 404 });
     }
 
-    const removedMatch = data.matches[matchIndex];
     data.matches.splice(matchIndex, 1);
-    writeSchedule(data);
+    await writeSchedule(data);
 
-    return NextResponse.json({ success: true, removedMatch }, { status: 200 });
+    return NextResponse.json({ success: true }, { status: 200 });
   } catch (error: any) {
     console.error("Error deleting match:", error);
     return NextResponse.json({ error: error.message || "Failed to delete match" }, { status: 500 });
